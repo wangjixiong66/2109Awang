@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>mydemo</title>
+</head>
+
+<body>
+    <div id="tap"></div>
+    <div id="tapp">
+        <h2><span id="clo">x</span></h2>
+    </div>
+    <button>点我</button>
+</body>
+<style>
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font: 12px/1.5 Tahoma;
+    }
+
+    center {
+        padding-top: 10px;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    #tap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+        display: none;
+    }
+
+    #tapp {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 500px;
+        height: 500px;
+        background: yellow;
+        display: none;
+    }
+
+    h2 {
+        font-size: 12px;
+        text-align: right;
+        background: pink;
+        padding: 0 2px;
+    }
+
+    h2 span {
+        cursor: pointer;
+        background: #fff;
+        padding: 0 2px;
+    }
+</style>
+<script>
+    var tapp = document.getElementById("tapp");
+    var La = document.getElementById("overlay");
+    var Btn = document.getElementsByTagName("button")[0];
+    var Clo = document.getElementById("clo");
+    Btn.onclick = function () {
+        tapp.style.display = "block";
+        La.style.display = "block";
+    }
+    Clo.onclick = function () {
+        tapp.style.display = "none";
+        La.style.display = "none";
+    }
+
+</script>
+
+</html>

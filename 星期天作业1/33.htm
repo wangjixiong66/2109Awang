@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>mydemo</title>
+</head>
+
+<body>
+    <div id="tap">
+        <input type="text" value="1,2,3" /><br>
+        <button>等于</button>
+        <span id="add"></span>
+    </div>
+</body>
+<style>
+    body {
+        height: 100%;
+    }
+    #tap {
+        width: 500px;
+        margin: 30px auto;
+        font: 0.6em "微软雅黑";
+    }
+
+    #tap input,
+    #tap button {
+        margin: 10px;
+        display: inline-block;
+    }
+</style>
+<script>
+    var Btn = document.getElementsByTagName("button")[0];
+    var Input = document.getElementsByTagName("input")[0];
+    var add = document.getElementById("add");
+    Input.onkeyup = function () {
+        this.value = this.value.replace(/[^(\d)|(,)]/, "");
+    }
+    Btn.onclick = function () {
+        var sum = 0;
+        var Input = document.getElementsByTagName("input")[0].value.split(",");
+        for (var i in Input) {
+            sum += parseInt(Input[i]);
+        }
+        add.innerHTML = sum;
+    }
+</script>
+
+</html>

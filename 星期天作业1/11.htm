@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta type="utf-8">
+    <title>mydemo</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="input" value="河南省" />
+        <input type="text" name="input" value="南阳市" /><br />
+        <input type="button" value="传参" id="transFun" onclick=transFun() />
+    </div>
+</body>
+<script>
+    function transFun() {
+        var inp = document.getElementsByName("input");
+        for (var i = 0; i < inp.length; i++) {
+            alert(inp[i].value);
+        }
+    }
+</script>
+<style type="text/css">
+    div {
+        width: 300px;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    input {
+        margin: 5px 0;
+    }
+
+    button {
+        cursor: pointer;
+    }
+</style>
+
+</html>
